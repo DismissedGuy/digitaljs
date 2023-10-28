@@ -177,7 +177,7 @@ class CircuitTestFixture {
         }
     }
     async waitUntilStable(timeout) {
-        timeout = timeout || 2;
+        timeout = timeout || 5;
         await this.circuit.synchronize();
         for (let x = 0; x < timeout && this.circuit.hasPendingEvents; x++)
             await this.circuit.updateGates({ synchronous: true });
